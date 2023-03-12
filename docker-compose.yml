@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  # Para el contenedor de la base de datos:
+  # service for database
   db:
     image: postgres:15.2-alpine3.17
     restart: always
@@ -10,12 +10,12 @@ services:
     ports:
       - '5432:5432'
     volumes:
-      # Para que ejecute queris al inicializar
+      # initial queri and persistence of data
       - ./src/test/resources/db/init.sql:/docker-entrypoint-initdb.d/create_tables.sql
 
-  # Para ver la base de datos
+  # service for adminer database
   adminer:
-    image: adminer
+    image: adminer:4.8.1
     restart: always
     ports:
       - 8081:8080

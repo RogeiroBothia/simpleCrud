@@ -1,3 +1,3 @@
-create database example_crud;
+create database simple_crud;
 
-\connect example_crud;
+\connect simple_crud;
